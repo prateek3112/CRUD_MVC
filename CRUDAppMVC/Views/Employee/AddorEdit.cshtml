@@ -1,0 +1,53 @@
+﻿ @model CRUDAppMVC.Models.Employee
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+<h4>Employee Form</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="AddorEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="EmpCode" class="control-label"></label>
+                    <input asp-for="EmpCode" class="form-control" />
+                    <span asp-validation-for="EmpCode" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="position" class="control-label"></label>
+                    <input asp-for="position" class="form-control" />
+                    <span asp-validation-for="position" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location" class="control-label"></label>
+                <input asp-for="Location" class="form-control" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <input type="submit" value="Submit" class="btn btn-primary btn-dark"/>
+                </div>
+                <div class="form-group col-md-3">
+                    <a asp-action="Index"  class="btn btn-secondary btn-dark"><i class="fa fa-table"></i> Back to List </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
